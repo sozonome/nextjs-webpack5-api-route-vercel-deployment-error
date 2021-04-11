@@ -13,7 +13,7 @@ const Home = ({ allPostsData }) => {
       </Head>
 
       <main className={styles.main}>
-        Example, go to <a href="/api/projects">API route</a>
+        Example, go to <a href="/api/posts">API route</a>
         {allPostsData.map((post) => (
           <div>
             <h2>{post.title}</h2>
