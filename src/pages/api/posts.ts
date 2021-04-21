@@ -1,8 +1,8 @@
 import Cors from "cors";
 import { NextApiRequest, NextApiResponse } from "next";
 
-import initMiddleware from "../../lib/init-middleware";
-import { getSortedPostsData } from "../../lib/posts";
+import initMiddleware from "lib/init-middleware";
+import { getSortedPostsData } from "lib/posts";
 
 const cors = initMiddleware(
   Cors({
