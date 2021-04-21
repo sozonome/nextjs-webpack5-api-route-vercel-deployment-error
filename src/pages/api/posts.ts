@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import initMiddleware from "lib/init-middleware";
 import { getSortedPostsData } from "lib/posts";
+import { PostType } from "types/post";
 
 const cors = initMiddleware(
   Cors({
@@ -11,7 +12,7 @@ const cors = initMiddleware(
 );
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const allProjectsData = getSortedPostsData();
+  const allProjectsData: Array<PostType> = getSortedPostsData();
 
   await cors(req, res);
 
