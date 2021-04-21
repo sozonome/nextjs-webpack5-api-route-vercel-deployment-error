@@ -1,4 +1,5 @@
 import Cors from "cors";
+import { NextApiRequest, NextApiResponse } from "next";
 
 import initMiddleware from "../../lib/init-middleware";
 import { getSortedPostsData } from "../../lib/posts";
@@ -9,7 +10,7 @@ const cors = initMiddleware(
   })
 );
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const allProjectsData = getSortedPostsData();
 
   await cors(req, res);
