@@ -1,10 +1,16 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
+import { PostType } from "types/post";
 
 import { getSortedPostsData } from "../lib/posts";
 
 import styles from "../styles/Home.module.css";
 
-const Home = ({ allPostsData }) => {
+type HomeProps = {
+  allPostsData: Array<PostType>;
+};
+
+const Home = ({ allPostsData }: HomeProps) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -36,7 +42,7 @@ const Home = ({ allPostsData }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const allPostsData = getSortedPostsData();
 
   return {
